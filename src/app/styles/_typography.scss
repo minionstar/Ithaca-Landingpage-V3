@@ -1,0 +1,104 @@
+h1 {
+  font-size: 4.1vw !important;
+  line-height: 90% !important;
+  font-weight: 400 !important;
+
+  @media (max-width: $tablet) {
+    font-size: 13.165vw !important;
+    line-height: 100% !important;
+    letter-spacing: -0.506vw !important;
+  }
+}
+
+h2 {
+  font-size: 3.677vw !important;
+  line-height: 100% !important;
+
+  @media (max-width: $tablet) {
+    font-size: 10.633vw !important;
+    letter-spacing: -0.213vw !important;
+  }
+}
+
+h3 {
+  font-size: 3.2vw !important;
+  line-height: 95% !important;
+
+  @media (max-width: $tablet_big) {
+    font-size: 8vw !important;
+    letter-spacing: -0.132vw !important;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 8.101vw !important;
+    line-height: 100% !important;
+    letter-spacing: -0.329vw !important;
+  }
+}
+
+h4 {
+  font-size: 2.491vw !important;
+  line-height: 110% !important;
+
+  @media (max-width: $tablet_big) {
+    font-size: 4vw !important;
+    letter-spacing: -0.132vw !important;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 6.582vw !important;
+    letter-spacing: -0.132vw !important;
+  }
+}
+
+.body-32 {
+  @apply text-[1.898vw];
+
+  @media (max-width: $tablet) {
+    @apply text-[8.101vw];
+  }
+
+  &.body-32-bold {
+    @apply font-bold;
+  }
+}
+
+.body-28 {
+  @apply text-[1.661vw];
+
+  @media (max-width: $tablet) {
+    @apply text-[7.089vw];
+  }
+}
+
+.body-24 {
+  @apply text-[1.423vw];
+
+  @media (max-width: $tablet) {
+    @apply text-[6.076vw];
+  }
+}
+
+.body-20 {
+  @apply text-[1.186vw];
+
+  @media (max-width: $tablet) {
+    @apply text-[5.063vw];
+  }
+}
+
+.body-13 {
+  @apply text-[0.771vw];
+
+  @media (max-width: $tablet) {
+    @apply text-[3.291vw];
+  }
+}
+
+.body-10 {
+  @apply text-[0.593vw];
+
+  @media (max-width: $tablet) {
+    @apply text-[2.532vw];
+  }
+}

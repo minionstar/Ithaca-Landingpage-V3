@@ -1,0 +1,128 @@
+.AppIthaca {
+  display: flex;
+
+  position: relative;
+  z-index: 7;
+
+  background-color: #060913;
+
+  @media screen and (max-width: $tablet_big) {
+    height: 100dvh;
+    background-color: unset;
+  }
+}
+
+.AppIthaca_inner {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  gap: get-d(45px);
+  padding: get-d(180px) get-d(42px) 0;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(
+      0deg,
+      #060913 0%,
+      #00000000,
+      30%,
+      #00000000 90%,
+      #060913 100%
+    );
+
+    pointer-events: none;
+
+    z-index: 10;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: get-tl(45px);
+    padding: get-tl(250px) 0 0;
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(45px);
+    padding: get-t(180px) 0 0;
+  }
+}
+
+.AppIthaca_lines {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+
+  opacity: 0;
+
+  transition: 0.5s ease-in-out;
+
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: $mobile) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.AppIthaca_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+}
+
+.AppIthaca_nav {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(32px);
+  width: get-d(250px);
+
+  @media screen and (max-width: $tablet_big) {
+    width: 100%;
+    height: get-tl(400px);
+    gap: get-tl(32px);
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(600px);
+    gap: get-t(32px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    justify-content: center;
+    height: get-m(350px);
+    gap: get-m(32px);
+  }
+}
+
+.AppIthaca_mockups {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+}

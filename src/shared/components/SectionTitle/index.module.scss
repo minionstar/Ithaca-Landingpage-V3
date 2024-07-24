@@ -1,0 +1,17 @@
+.SectionTitle {
+  margin-top: get-d(6px);
+
+  color: #fff;
+  font-size: get-d(62px);
+  line-height: 100%; /* 62px */
+  letter-spacing: get-d(-2.48px);
+  text-transform: capitalize;
+
+  @media (max-width: $tablet_big) {
+    font-size: get-tl(72px);
+  }
+
+  @media (max-width: $tablet) {
+    @apply text-[10.633vw];
+  }
+}

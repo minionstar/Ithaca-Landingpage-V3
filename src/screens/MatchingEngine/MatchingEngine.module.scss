@@ -1,0 +1,83 @@
+.matchingEngine {
+  display: flex;
+
+  position: relative;
+  z-index: 14;
+
+  @media screen and (max-width: $tablet_big) {
+    height: 90dvh;
+  }
+}
+
+.matchingEngine_inner {
+  display: flex;
+  flex: 1 0 0;
+  position: relative;
+  padding: get-d(120px) get-d(42px);
+
+  @media screen and (max-width: $tablet_big) {
+    padding: get-tl(140px) get-tl(42px) get-tl(20px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: get-t(140px) get-t(42px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: get-m(100px) get-m(20px);
+  }
+}
+
+.matchingEngine_header {
+}
+
+.matchingEngine_header_logo {
+  height: get-d(54px);
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.matchingEngine_header_title {
+  color: #fff;
+  font-size: get-d(62px);
+  line-height: 100%; /* 62px */
+  letter-spacing: get-d(-2.48px);
+  text-transform: capitalize;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(62px);
+    letter-spacing: get-tl(-2.48px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(62px);
+    letter-spacing: get-t(-2.48px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(40px);
+    letter-spacing: get-m(-2px);
+  }
+}
+
+.matchingEngine_player {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: $tablet_big) {
+    top: 0%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    top: 5%;
+    height: 100%;
+  }
+}

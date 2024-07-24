@@ -1,0 +1,204 @@
+.hero {
+  height: 100vh !important;
+
+  &Geometry {
+    @apply w-[64.413vw] h-[53.4vh] absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%];
+
+    svg {
+      @apply w-full h-auto;
+    }
+  }
+
+  &Blur {
+    @apply absolute left-1/2 top-0 w-[50.835vw] h-[100.7vh];
+
+    pointer-events: none !important;
+
+    transform: translate(-50%, -40%) !important;
+  }
+
+  &Gradient {
+    @apply absolute top-1/2 left-1/2 w-[35vw] h-[100vh] object-contain object-center opacity-[1];
+
+    @media (max-width: $tablet) {
+      @apply w-[55vw];
+    }
+
+    pointer-events: none !important;
+
+    // translate: -50% -50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    &.left {
+      @apply left-[30%];
+
+      @media (max-width: $tablet) {
+        @apply left-[20%];
+      }
+    }
+
+    &.right {
+      @apply left-[70%];
+
+      @media (max-width: $tablet) {
+        @apply left-[80%];
+      }
+    }
+
+    &.top {
+      @apply rotate-[90deg] top-[10%];
+
+      // rotate: 90deg !important;
+
+      @media (max-width: $tablet) {
+        top: 40%;
+      }
+    }
+  }
+
+  div[class="bottom-shadow"] {
+    content: "";
+
+    @apply fixed left-0 right-0 bottom-[-20%] w-full h-[25vh] z-[5];
+
+    pointer-events: none !important;
+
+    background: linear-gradient(180deg, #010512 -23.79%, #010512 59.27%);
+    filter: blur(1.745vw);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 80vh;
+      height: 60vh;
+      border-radius: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 4, 18, 1) 0%,
+        rgba(0, 4, 18, 0.8) 70%,
+        rgba(0, 4, 18, 0) 100%
+      );
+    }
+  }
+
+  div[class="container"] {
+    @apply relative z-[6];
+  }
+
+  &Wrapper {
+    @apply w-full h-full flex flex-col items-center justify-end translate-x-[0.5%];
+
+    @media (max-width: $tablet) {
+      @apply justify-between pt-[35vh];
+    }
+
+    button:last-child {
+      @media (max-width: $tablet) {
+        @apply mb-[10vh];
+      }
+    }
+
+    svg[class*="neon-logo"] {
+      @apply translate-x-[5%];
+
+      translate: 0 5% !important;
+
+      scale: 0.85 !important;
+
+      @media (max-width: $tablet) {
+        @apply w-[20.253vw] h-[3.3vh];
+        scale: 1 !important;
+      }
+    }
+
+    h1 {
+      @apply mt-[1.2vh] mb-[4.2vh];
+
+      @media (max-width: $tablet) {
+        @apply mt-auto mb-[2vh];
+      }
+
+      white-space: nowrap !important;
+
+      perspective: 1000px;
+
+      > * {
+        letter-spacing: -0.139vw !important;
+      }
+
+      h3 {
+        perspective: 1000px;
+      }
+
+      div {
+        transform: rotateX(-105deg);
+        scale: 0.75;
+        opacity: 0;
+        transform-origin: bottom center;
+      }
+    }
+  }
+}
+
+.heroBlurBox {
+  opacity: 0.5;
+}
+
+.hero_button_launch {
+  position: relative;
+  overflow: hidden;
+  text-transform: capitalize;
+
+  & svg {
+    height: 100%;
+  }
+
+  &:hover {
+    .hero_button_launch_FlyingParticles {
+      opacity: 1;
+    }
+  }
+}
+
+.hero_button_launch_FlyingParticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transition: 1s ease-in-out;
+  transition-property: opacity;
+}
+
+.hero_logo {
+  display: flex;
+  justify-content: center;
+  height: get-d(70px);
+  width: auto;
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    height: get-tl(85px);
+
+    & svg {
+      transform: translateY(-13vh);
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(35px);
+    & svg {
+      transform: translateY(-1vh);
+    }
+  }
+}

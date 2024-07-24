@@ -1,0 +1,165 @@
+.architecture {
+  display: flex;
+  position: relative;
+  z-index: 15;
+
+  &Wrapper {
+    @apply w-full h-full flex flex-col justify-center gap-[10vh];
+
+    @media (max-width: $tablet_big) {
+      @apply pt-[10vh] justify-start gap-[3.75vh];
+    }
+  }
+
+  &Gradient {
+    @apply absolute h-[101.4vh] w-[80.167vw] right-0 top-1/2 translate-y-[-50%] opacity-100 transition-opacity duration-[500ms];
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: $tablet_big) {
+      @apply absolute h-[100.4vh] w-[300.167vw] left-0 top-1/2 translate-y-[-50%] translate-x-[-10%] opacity-100 transition-opacity duration-[500ms];
+      right: unset;
+    }
+  }
+
+  &Grid {
+    @apply absolute h-[55.8vh] w-[47.034vw] right-0 top-1/2 translate-y-[-50%] translate-x-[-35%] opacity-100 transition-opacity duration-[500ms];
+
+    @media (max-width: $tablet) {
+      @apply w-full h-auto translate-y-0 translate-x-0 left-0 right-0;
+    }
+  }
+
+  &List {
+    @apply flex flex-col gap-[8vh] mb-[6vh] max-w-[50vw] w-full;
+
+    @media (max-width: $tablet) {
+      @apply max-w-full gap-[2.8vh];
+    }
+
+    &Item {
+      @apply flex items-end gap-[0.712vw] w-full;
+
+      @media (max-width: $tablet) {
+        @apply gap-[2.025vw];
+      }
+
+      &:hover {
+        div:nth-child(2) {
+          > span {
+            color: #5ee192;
+          }
+        }
+
+        .arrow {
+          svg {
+            path {
+              fill: #5ee192;
+            }
+
+            &:first-child {
+              @apply translate-x-[30%] translate-y-[-30%];
+            }
+
+            &:last-child {
+              @apply translate-x-[-45%] translate-y-[45%];
+            }
+          }
+        }
+
+        .line {
+          div {
+            background-color: #5ee192;
+            filter: drop-shadow(0px 0px 0.178vw #5ee192) !important;
+          }
+
+          span {
+            filter: drop-shadow(0px 0px 0.386vw #5ee192) !important;
+            border: 0.178vw solid #5ee192;
+          }
+        }
+      }
+
+      div:nth-child(2) {
+        > * {
+          @apply transition-colors duration-[400ms];
+        }
+      }
+
+      .arrow {
+        @apply w-[1.898vw] h-[1.898vw] translate-y-[-25%] relative overflow-hidden;
+
+        translate: 0 -25% !important;
+
+        @media (max-width: $tablet) {
+          @apply w-[4.557vw] h-[4.557vw];
+        }
+
+        svg {
+          @apply w-full h-full absolute left-0 top-0 transition-transform duration-[450ms];
+
+          path {
+            @apply transition-colors duration-[400ms];
+          }
+
+          &:last-child {
+            @apply translate-x-[-100%] translate-y-[100%];
+          }
+        }
+      }
+
+      .line {
+        @apply flex items-center translate-y-[-150%] ml-auto;
+
+        @media (max-width: $tablet) {
+          @apply hidden;
+        }
+
+        translate: 0 -150% !important;
+
+        div {
+          @apply h-[0.1vh] bg-white w-[16.014vw];
+          filter: drop-shadow(0px 0px 0.178vw #fff);
+
+          transition: 0.4s ease;
+          transition-property: color, stroke, fill, background-color, filter;
+        }
+
+        span {
+          @apply w-[0.593vw] h-[0.593vw] min-w-[0.593vw] min-h-[0.593vw] rounded-full;
+
+          filter: drop-shadow(0px 0px 0.386vw #fff);
+
+          border: 0.178vw solid #fff;
+
+          transition: 0.4s ease;
+          transition-property: color, stroke, fill, background-color, filter,
+            border;
+        }
+      }
+    }
+  }
+}
+
+.architecture_inner {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  height: 100vh !important;
+}
+
+.Architecture_items {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(70px);
+  width: 55%;
+  padding-left: get-d(80px);
+
+  @media (max-width: $tablet_big) {
+    width: 100%;
+    padding-left: unset;
+  }
+}

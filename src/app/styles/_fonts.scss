@@ -1,0 +1,31 @@
+@mixin fontCreate($name, $weight, $url, $ttf: true, $style: normal) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    @if $ttf {
+      src:
+        url("#{$url}.woff2") format("woff2"),
+        url("#{$url}.woff") format("woff"),
+        url("#{$url}.ttf") format("truetype"),
+        url("#{$url}.eot") format("embedded-opentype");
+    } @else {
+      src:
+        url("#{$url}.woff2") format("woff2"),
+        url("#{$url}.woff") format("woff"),
+        url("#{$url}.otf") format("opentype"),
+        url("#{$url}.eot") format("embedded-opentype");
+    }
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@include fontCreate($dalek, 700, "/fonts/DalekPinpointBold", true);
+@include fontCreate($aeonik, 100, "/fonts/Aeonik-Thin", true);
+@include fontCreate($aeonik, 300, "/fonts/Aeonik-Light", true);
+@include fontCreate($aeonik, 300, "/fonts/Aeonik-LightItalic", true, italic);
+@include fontCreate($aeonik, 400, "/fonts/Aeonik-Regular", true);
+@include fontCreate($aeonik, 500, "/fonts/Aeonik-Medium", true);
+@include fontCreate($aeonik, 700, "/fonts/Aeonik-Bold", true);
+@include fontCreate($aeonik, 900, "/fonts/Aeonik-Black", true);

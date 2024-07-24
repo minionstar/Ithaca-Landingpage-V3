@@ -1,0 +1,227 @@
+.MixedInteger {
+  display: flex;
+  overflow: hidden;
+
+  position: relative;
+  z-index: 10;
+
+  mix-blend-mode: lighten;
+
+  background-color: #060913;
+
+  @media screen and (max-width: $tablet_big) {
+    background-color: unset;
+  }
+}
+
+.MixedInteger_inner {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  justify-content: space-between;
+  padding: get-d(120px) get-d(42px) get-d(62px);
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column;
+    padding: get-tl(140px) get-tl(20px) get-tl(62px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: get-t(120px) get-t(20px) get-t(62px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: get-m(100px) get-m(20px) get-m(62px);
+  }
+}
+
+.MixedInteger_info {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+
+  @media screen and (max-width: $tablet_big) {
+    justify-content: flex-start;
+    flex: none;
+  }
+}
+
+.MixedInteger_footer {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(40px);
+  width: get-d(740px);
+
+  margin-top: get-d(50px);
+
+  @media screen and (max-width: $tablet_big) {
+    width: 100%;
+    gap: get-tl(10px);
+    margin-top: get-tl(32px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(10px);
+    margin-top: get-t(32px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(10px);
+    margin-top: get-m(32px);
+  }
+}
+
+.MixedInteger_footer_icon {
+  height: get-d(60px);
+  transform: translateX(get-d(-5px));
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  // @media screen and (max-width: $tablet_big) {
+  //   display: none;
+  // }
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.MixedInteger_footer_title {
+  color: #fff;
+  font-size: get-d(20px);
+  line-height: 110%;
+  letter-spacing: get-d(-0.6px);
+  text-align: justify;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(20px);
+    letter-spacing: get-tl(-0.6px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(20px);
+    letter-spacing: get-t(-0.6px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(19px);
+    letter-spacing: get-m(-0.6px);
+  }
+}
+
+.MixedInteger_footer_subtitle {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(16px);
+  margin-top: get-d(20px);
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(16px);
+    margin-top: get-tl(25px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(16px);
+    margin-top: get-t(25px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(16px);
+    margin-top: get-m(25px);
+  }
+}
+
+.MixedInteger_footer_subtitle_title {
+  color: #fff;
+  font-size: get-d(12px);
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: get-d(1.8px);
+  text-transform: uppercase;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(12px);
+    letter-spacing: get-tl(1.8px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(10px);
+    letter-spacing: get-t(1.5px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(12px);
+    letter-spacing: get-m(1.8px);
+  }
+}
+
+.MixedInteger_footer_subtitle_text {
+  color: #fff;
+  font-size: get-d(20px);
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: get-d(-0.4px);
+
+  text-align: justify;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(20px);
+    letter-spacing: get-tl(-0.4px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(20px);
+    letter-spacing: get-t(-0.4px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(18px);
+    letter-spacing: get-m(-0.16px);
+  }
+}
+
+.MixedInteger_header_title {
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(45px);
+    letter-spacing: get-m(-0.8px);
+  }
+}
+
+.MixedInteger_player {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+
+  @media screen and (max-width: $tablet_big) {
+    width: 100%;
+  }
+}
+
+.MixedInteger_player_item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 140%;
+  width: auto;
+  max-width: none;
+  mix-blend-mode: lighten;
+
+  @media screen and (max-width: $tablet_big) {
+    position: relative;
+
+    width: 80%;
+    height: auto;
+  }
+
+  @media screen and (max-width: $tablet) {
+    position: relative;
+
+    width: 120%;
+    height: auto;
+  }
+}

@@ -1,0 +1,41 @@
+.mission {
+  // @apply bg-center bg-cover bg-no-repeat;
+  height: 100vh !important;
+
+  // background-image: url('/images/backgrounds/mission.png');
+
+  &Animation {
+    @apply w-full h-full relative z-[1];
+  }
+
+  &Galaxy {
+    @apply absolute top-0 left-0 w-full h-full pointer-events-none z-[1];
+  }
+
+  &Text {
+    @apply absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-[#E8E8E8] w-full;
+
+    h4 {
+      font-weight: 300;
+    }
+
+    div {
+      @apply opacity-0;
+
+      transform: translate(0, 100%);
+    }
+
+    @media screen and (max-width: $tablet_big) {
+      padding: 0 get-tl(50px);
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: 0 get-t(50px);
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 0 get-m(20px);
+      font-size: get-m(26px);
+    }
+  }
+}

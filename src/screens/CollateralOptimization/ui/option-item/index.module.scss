@@ -1,0 +1,29 @@
+.OptionItem {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: calc(-100% - get-d(15px));
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    width: 100%;
+    height: get-d(1px);
+    background-color: #3f3f3f;
+  }
+  &::after {
+    width: get-d(6px);
+    height: get-d(6px);
+    left: unset;
+    right: calc(100% + get-d(15px));
+
+    background-color: #222;
+
+    border-radius: 100%;
+    border: get-d(1px) solid #5e5e5e;
+  }
+}

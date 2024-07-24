@@ -1,0 +1,87 @@
+.ArchitectureItem {
+  display: flex;
+  align-items: center;
+  gap: get-d(10px);
+
+  cursor: pointer;
+
+  &:hover {
+    .ArchitectureItem_icon {
+      & svg {
+        height: 100%;
+
+        & path {
+          fill: #5ee192;
+        }
+      }
+    }
+
+    .ArchitectureItem_title {
+      color: #5ee192;
+    }
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(10px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(10px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(10px);
+  }
+}
+
+.ArchitectureItem_icon {
+  height: get-d(24px);
+
+  & svg {
+    height: 100%;
+
+    & path {
+      transition: 0.2s ease-in-out;
+      transition-property: fill;
+    }
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    height: get-tl(24px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(24px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(24px);
+  }
+}
+
+.ArchitectureItem_title {
+  color: #fff;
+  font-size: get-d(22px);
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: get-d(-0.56px);
+  text-transform: capitalize;
+
+  transition: 0.2s ease-in-out;
+  transition-property: color;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(22px);
+    letter-spacing: get-tl(-0.56px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(22px);
+    letter-spacing: get-t(-0.56px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(20px);
+    letter-spacing: get-m(-0.6px);
+  }
+}

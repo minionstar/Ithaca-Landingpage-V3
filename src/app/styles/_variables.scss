@@ -1,0 +1,46 @@
+// fonts
+$aeonik: "Aeonik";
+$inter: "Inter";
+$dalek: "Dalek Pinpoint";
+
+// colors
+$accent: #5ee192;
+$smoke-white: #e8e8e8;
+$gray: #3f3f3f;
+
+// screens
+$laptop_big: 1760px;
+$desktop: 1600px;
+$laptop: 1440px;
+$laptop_small: 1280px;
+$tablet_big: 1024px;
+$tablet: 768px;
+$tablet_small: 656px;
+$mobile_big: 565px;
+$mobile: 465px;
+$mobile_small: 376px;
+
+@function get-d($target) {
+  $vw-context: calc((1600 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+
+@function get-ds($target) {
+  $vw-context: calc((1368 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+
+@function get-tl($target) {
+  $vw-context: calc((1024 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+
+@function get-t($target) {
+  $vw-context: calc((768 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}
+
+@function get-m($target) {
+  $vw-context: calc((430 * 0.01) * 1px);
+  @return calc(($target / $vw-context) * 1vw);
+}

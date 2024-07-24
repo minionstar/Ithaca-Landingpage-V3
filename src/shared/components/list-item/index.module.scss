@@ -1,0 +1,81 @@
+.ListItem {
+  display: flex;
+  align-items: center;
+  gap: get-d(20px);
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(20px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(20px);
+  }
+}
+
+.ListItem_ring {
+  min-width: 7px;
+  max-width: 7px;
+  width: 100%;
+
+  min-height: 7px;
+  max-height: 7px;
+  height: 100%;
+
+  border-radius: 50%;
+  border: get-d(2px) solid #fff;
+  background: #0b0e15;
+  box-shadow: 0px 0px get-d(6px) 0px #fff;
+
+  @media screen and (max-width: $tablet_big) {
+    width: get-tl(7px);
+    height: get-tl(7px);
+
+    border: get-tl(2px) solid #fff;
+    box-shadow: 0px 0px get-tl(6px) 0px #fff;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: get-t(7px);
+    height: get-t(7px);
+
+    border: get-t(2px) solid #fff;
+    box-shadow: 0px 0px get-t(6px) 0px #fff;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: get-m(7px);
+    height: get-m(7px);
+
+    border: get-m(2px) solid #fff;
+    box-shadow: 0px 0px get-m(6px) 0px #fff;
+  }
+}
+
+.ListItem_title {
+  color: #fff;
+  font-size: get-d(18px);
+  line-height: 120%; /* 21.6px */
+  letter-spacing: get-d(-0.36px);
+  font-weight: 300;
+
+  text-align: justify;
+
+  & span {
+    font-style: italic;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(18px);
+    letter-spacing: get-tl(-0.36px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(18px);
+    letter-spacing: get-t(-0.36px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(14px);
+    letter-spacing: get-m(-0.36px);
+  }
+}

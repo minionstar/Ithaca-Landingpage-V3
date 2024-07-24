@@ -1,0 +1,148 @@
+.ecosystem {
+  height: 109vh !important;
+  // margin-top: get-d(-500px);
+  perspective: 1000px;
+
+  mix-blend-mode: lighten;
+
+  div[class="container"] {
+    @apply flex flex-col;
+  }
+
+  // @media screen and (max-width: $mobile) {
+  //   height: 50vh !important;
+  // }
+
+  &::after {
+    content: "";
+
+    @apply absolute left-1/2 top-[-10vh] translate-x-[-50%] translate-y-[-50%] w-[21.708vw] h-[110vh];
+
+    background: rgba(177, 255, 208, 0.2);
+    filter: blur(10.38vw);
+
+    @media (max-width: $tablet) {
+      top: unset;
+      bottom: -30vh;
+
+      @apply w-[60vw] h-[100vh];
+    }
+  }
+
+  &PerspectiveText {
+    @apply flex flex-col items-center justify-center capitalize z-[2] relative text-center opacity-0 w-full;
+
+    color: #fff;
+
+    opacity: 0;
+    transition: 1s ease-in-out;
+    transition-property: opacity;
+
+    // transition: opacity 0.01s ease;
+
+    perspective: 1000px;
+
+    svg[class*="neon-logo"] {
+      @apply w-[25.5vw] h-[15.5vh];
+
+      transform: rotateX(27.5deg) !important;
+
+      @media (max-width: $tablet) {
+        @apply w-[70vw] h-[15vh];
+      }
+    }
+
+    & span {
+      width: 5px;
+    }
+  }
+
+  &Perspective {
+    @apply absolute left-1/2 top-1/2 flex flex-col gap-[15vh] w-full;
+
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, 0%, 0) rotateX(17.5deg) scale(1.75);
+
+    margin-top: -50%;
+
+    @media (max-width: $tablet) {
+      transform: translate3d(-50%, 0%, 0) rotateX(37.5deg) scale(1);
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-top: -100%;
+    }
+  }
+
+  &Graph {
+    @apply w-[66.726vw] h-[39.5vh] absolute left-1/2 translate-x-[-50%] top-[8.6vh] opacity-0;
+
+    path[id="graph-line"] {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+    }
+
+    &Icon {
+      @apply w-[5.338vw] h-[5.338vw] absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] opacity-0;
+
+      img {
+        @apply w-full h-full object-contain object-center;
+      }
+    }
+
+    svg {
+      @apply w-full h-full;
+    }
+  }
+
+  &Text {
+    @apply absolute text-center capitalize w-full;
+
+    line-height: 100% !important;
+
+    &.first {
+      @apply left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%];
+    }
+
+    &.second {
+      @apply top-[40%] left-1/2 translate-x-[-50%] translate-y-[500%];
+    }
+
+    &.side {
+      @apply top-1/2 translate-y-[-50%] left-1/2 translate-x-[-50%];
+
+      span {
+        @apply translate-x-[300%];
+      }
+    }
+  }
+
+  &List {
+    @apply flex flex-col gap-[1vh];
+  }
+
+  &ListWrapper {
+    @apply flex gap-[0.949vw] items-stretch mt-auto relative;
+  }
+
+  &Progress {
+    @apply w-[0.237vw] rounded-full bg-[#E8E8E8] h-0;
+  }
+}
+
+.ecosystem_logo {
+  height: get-d(100px);
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(100px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(100px);
+  }
+}

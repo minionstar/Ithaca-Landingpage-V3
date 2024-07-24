@@ -1,0 +1,123 @@
+.SocialItem {
+  display: flex;
+  align-items: center;
+  gap: get-d(10px);
+
+  &:hover {
+    .SocialItem_icon,
+    .SocialItem_info_title {
+      -webkit-filter: drop-shadow(0px 0px get-d(5px) rgb(255, 255, 255, 0.61));
+      filter: drop-shadow(0px 0px get-d(5px) rgba(255, 255, 255, 0.61));
+    }
+  }
+
+  &.disabled {
+    .SocialItem_info_title {
+      color: gray;
+    }
+
+    &:hover {
+      .SocialItem_icon,
+      .SocialItem_info_title {
+        -webkit-filter: unset;
+        filter: unset;
+
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(10px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(10px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(10px);
+  }
+}
+
+.SocialItem_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: get-d(18px);
+
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, filter;
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    height: get-tl(24px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(14px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(14px);
+  }
+}
+
+.SocialItem_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.SocialItem_info_header {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: get-d(10px);
+  font-weight: 500;
+  line-height: 110%; /* 11px */
+  letter-spacing: get-d(-0.1px);
+  text-transform: uppercase;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(10px);
+    letter-spacing: get-tl(-0.1px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(10px);
+    letter-spacing: get-t(-0.1px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(10px);
+    letter-spacing: get-m(-0.1px);
+  }
+}
+
+.SocialItem_info_title {
+  color: #c5c5d9;
+  font-size: get-d(18px);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: get-d(-0.72px);
+  text-transform: capitalize;
+
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, filter;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(20px);
+    line-height: 150%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(16px);
+    line-height: 150%;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(16px);
+  }
+}

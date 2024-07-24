@@ -1,0 +1,151 @@
+.MockupItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  perspective: get-d(222px);
+
+  pointer-events: none;
+  &.active {
+    pointer-events: all;
+
+    .MockupItem_arrows {
+      &::before {
+        width: 100%;
+      }
+
+      &::after {
+        height: get-d(300px);
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+  }
+}
+
+.MockupItem_arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: get-d(140px);
+
+  z-index: 10;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0%;
+    height: get-d(2px);
+
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #ca95ff 50%,
+      transparent 100%
+    );
+
+    transition: 1s ease-in-out;
+    transition-property: width, height;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: get-d(3px);
+    height: 0;
+
+    background-image: linear-gradient(
+      to top,
+      #ca95ff 0%,
+      #561198 50%,
+      transparent 100%
+    );
+
+    transition: 1s ease-in-out;
+    transition-property: width, height;
+  }
+
+  &.item_ {
+    &1 {
+      width: get-d(90px);
+      left: get-d(0px);
+    }
+    &2 {
+      left: get-d(35px);
+    }
+    &3 {
+      left: get-d(125px);
+    }
+    &4 {
+      left: get-d(270px);
+    }
+
+    @media screen and (max-width: $mobile) {
+      &1 {
+        width: get-m(40px);
+        left: get-m(30px);
+      }
+      &2 {
+        left: get-m(72px);
+      }
+      &3 {
+        left: get-m(135px);
+      }
+      &4 {
+        left: get-m(230px);
+      }
+    }
+  }
+}
+
+.MockupItem_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #0d101736;
+
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+  opacity: 0;
+
+  transform-style: preserve-3d;
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    height: 100%;
+    width: auto;
+
+    & img {
+      height: 100%;
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      padding: 0 20px;
+    }
+  }
+}

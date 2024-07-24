@@ -1,0 +1,45 @@
+.PolicyItem {
+  color: #fff;
+  font-size: get-d(12px);
+  font-weight: 400;
+  line-height: 110%; /* 13.2px */
+  letter-spacing: get-d(-0.12px);
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(20px);
+    letter-spacing: get-tl(-0.12px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(12px);
+    letter-spacing: get-t(-0.12px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(12px);
+    letter-spacing: get-m(-0.12px);
+  }
+}
+
+.PolicyItem_inner {
+  position: relative;
+}
+
+.PolicyItem_LineRight,
+.PolicyItem_LineLeft {
+  position: absolute;
+  top: 105%;
+}
+
+.PolicyItem_LineRight {
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+.PolicyItem_LineLeft {
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #5ee192;
+}

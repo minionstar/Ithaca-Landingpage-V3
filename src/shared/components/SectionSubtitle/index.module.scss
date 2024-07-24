@@ -1,0 +1,38 @@
+.SectionSubtitle {
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  font-size: get-d(12px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 12px */
+  letter-spacing: get-d(-0.36px);
+  text-transform: uppercase;
+
+  @media (max-width: $tablet) {
+    @apply text-[2.532vw] gap-[2.025vw];
+  }
+
+  & span {
+    margin-left: get-d(5px);
+
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    font-weight: 400;
+  }
+
+  & svg {
+    height: get-d(10px);
+    width: auto;
+    margin-left: get-d(8px);
+
+    @media (max-width: $tablet) {
+      @apply w-[8.101vw] h-[2.532vw];
+    }
+  }
+}

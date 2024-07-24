@@ -1,0 +1,103 @@
+.AuctionsCharacteristics {
+  position: relative;
+  display: flex;
+
+  position: relative;
+
+  background-color: #060913;
+
+  z-index: 13;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 100%;
+    height: 20%;
+
+    background-image: linear-gradient(
+      0deg,
+      #00000000 0%,
+      #060913 50%,
+      #00000000 100%
+    );
+
+    pointer-events: none;
+
+    z-index: 10;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    background-color: unset;
+    &::before {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: auto;
+    background-color: unset;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.AuctionsCharacteristics_inner {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  padding-top: get-d(100px);
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(100px);
+    padding-top: get-tl(50px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(100px);
+    padding-top: get-t(100px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(100px);
+    padding-top: get-m(100px);
+  }
+}
+
+.AuctionsCharacteristics_lotties {
+  width: 100%;
+  height: 100%;
+}
+
+.AuctionsCharacteristics_playerBox {
+  display: flex;
+  flex: 1 0 0;
+  width: 100%;
+
+  display: flex;
+  flex: 1 0 0;
+
+  transition: 2s ease-in-out;
+  transition-property: opacity, transform;
+
+  &.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  & > div {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.AuctionsCharacteristics_player {
+  @media screen and (max-width: $tablet_big) {
+    &.top {
+      transform: scale(1.06);
+    }
+  }
+}

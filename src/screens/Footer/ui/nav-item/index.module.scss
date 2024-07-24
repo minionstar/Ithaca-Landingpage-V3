@@ -1,0 +1,106 @@
+.NavItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 0%;
+    height: get-d(1px);
+
+    background-color: #5ee192;
+
+    transition: 0.4s ease-in-out;
+    transition-property: width;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+
+    .NavItem_icon {
+      margin-right: get-d(13px);
+    }
+
+    .NavItem_title {
+      color: #5ee192;
+    }
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    &::before {
+      height: get-tl(1px);
+    }
+
+    &:hover {
+      .NavItem_icon {
+        margin-right: get-tl(13px);
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &::before {
+      height: get-t(1px);
+    }
+
+    &:hover {
+      .NavItem_icon {
+        margin-right: get-t(13px);
+      }
+    }
+  }
+}
+
+.NavItem_icon {
+  overflow: hidden;
+  height: get-d(22px);
+  width: 0;
+
+  transition: 0.3s ease-in-out;
+  transition-property: margin-right;
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    display: none;
+    height: get-tl(14px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(14px);
+  }
+}
+
+.NavItem_title {
+  color: #c5c5d9;
+  font-size: get-d(18px);
+  text-wrap: nowrap;
+  font-weight: 400;
+
+  transition: 0.3s ease-in-out;
+  transition-property: color;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(20px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(16px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(16px);
+  }
+}

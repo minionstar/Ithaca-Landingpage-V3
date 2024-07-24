@@ -1,0 +1,288 @@
+.header {
+  @apply fixed w-full left-0 right-0 top-0 pt-[3.2vh] px-[2.491vw] flex items-center justify-between z-[100];
+
+  pointer-events: none;
+
+  @media (max-width: $tablet_big) {
+    @apply px-[3.063vw] py-[2.063vw];
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      backdrop-filter: blur(4px);
+      background-color: #00000017;
+    }
+  }
+
+  &.shared {
+    .headerNav {
+      .headerBurger {
+        width: 0px;
+        @apply opacity-0 translate-x-[-50%];
+
+        @media screen and (max-width: $tablet_big) {
+          @apply w-full h-full translate-x-[0%];
+
+          opacity: 1;
+        }
+      }
+
+      .headerLinks {
+        @apply delay-0 max-w-[35vw];
+
+        .headerLink {
+          @apply opacity-100 translate-y-0;
+
+          color: #fff !important;
+        }
+
+        li {
+          @apply opacity-100 delay-[350ms];
+        }
+      }
+    }
+  }
+
+  &MobileButton {
+    @apply opacity-0 pointer-events-none absolute left-[5.063vw] top-1/2 translate-y-[-50%] transition-opacity duration-[400ms];
+
+    &.active {
+      @apply opacity-100 pointer-events-auto;
+    }
+  }
+
+  &Logo {
+    @apply transition-opacity duration-[400ms];
+
+    height: 50px;
+    @apply flex items-center;
+
+    font-family: "Inter";
+
+    &.hidden {
+      transition-delay: 0s !important;
+      opacity: 0 !important;
+    }
+
+    & svg {
+      height: 100%;
+      width: auto;
+    }
+
+    @media screen and (max-width: $tablet_big) {
+      height: 70px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      height: 40px;
+    }
+  }
+
+  &Burger {
+    @apply w-[2.423vw] flex items-center justify-center relative;
+    overflow: hidden;
+
+    @media (max-width: $tablet_big) {
+      @apply w-full h-full;
+    }
+
+    @media (max-width: $tablet) {
+      @apply w-full h-full;
+    }
+
+    transition: 0.45s ease;
+    transition-property: transform, opacity, width;
+
+    &.active {
+      svg:nth-child(1) {
+        @apply opacity-0;
+      }
+
+      svg:nth-child(2) {
+        @apply opacity-100;
+      }
+    }
+
+    svg {
+      @apply w-full h-[0.8vh] transition-opacity pointer-events-none duration-[350ms] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+
+      &:nth-child(2) {
+        @apply opacity-0;
+      }
+
+      @media (max-width: $tablet_big) {
+        @apply w-[3.063vw] h-[3.063vw];
+      }
+
+      @media (max-width: $tablet) {
+        @apply w-[5.063vw] h-[5.063vw];
+      }
+    }
+  }
+
+  &Nav {
+    @apply py-[0.593vw] px-[0.593vw] flex items-stretch;
+    overflow: hidden;
+    pointer-events: all;
+
+    @media (max-width: $tablet_big) {
+      @apply w-[8.127vw] h-[8.127vw] p-0 flex items-center justify-center gap-0 rounded-[2.532vw];
+    }
+
+    @media (max-width: $tablet) {
+      @apply w-[10.127vw] h-[10.127vw] p-0 flex items-center justify-center gap-0 rounded-[2.532vw];
+    }
+
+    border-radius: 1.186vw;
+    border: 0.06vw solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(1.186vw);
+
+    &:hover {
+      .headerBurger {
+        @apply opacity-0 translate-x-[-50%];
+        width: 0px;
+      }
+
+      .headerLinks {
+        @apply delay-0 max-w-[35vw];
+
+        .headerLink {
+          @apply opacity-100 translate-y-0;
+          cursor: pointer;
+        }
+
+        li {
+          @apply opacity-100 delay-[350ms];
+        }
+      }
+    }
+
+    @media (max-width: $tablet_big) {
+      &:hover {
+        .headerBurger {
+          @apply translate-x-[0%];
+          opacity: 1;
+          width: 100%;
+        }
+
+        .headerLinks {
+          @apply delay-0 max-w-[35vw];
+
+          .headerLink {
+            @apply opacity-100 translate-y-0;
+            cursor: pointer;
+          }
+
+          li {
+            @apply opacity-100 delay-[350ms];
+          }
+        }
+      }
+    }
+
+    button:last-child {
+      @media (max-width: $tablet_big) {
+        @apply hidden;
+      }
+
+      @media (max-width: $tablet) {
+        @apply hidden;
+      }
+    }
+  }
+
+  &Links {
+    @apply flex items-stretch max-w-[0vw];
+
+    transition: 1s ease 0.45s;
+    transition-property: width, max-width, transform;
+
+    @media (max-width: $tablet_big) {
+      @apply hidden;
+    }
+
+    @media (max-width: $tablet) {
+      @apply hidden;
+    }
+
+    li {
+      @apply transition-opacity opacity-0 duration-[450ms] whitespace-nowrap relative h-full flex items-center justify-center px-[0.7115vw];
+
+      &:hover {
+        .gradient {
+          @apply opacity-100;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        &:hover {
+          .gradient {
+            @apply opacity-100;
+          }
+        }
+      }
+
+      .gradient {
+        @apply absolute bottom-[-17.5%] left-1/2 translate-x-[-50%] w-[18.304vw] h-[10vh] transition-opacity duration-[400ms] opacity-0 pointer-events-none;
+      }
+
+      & a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+    }
+  }
+
+  &Link {
+    @apply text-[0.771vw] font-medium capitalize opacity-0 translate-y-[55%];
+    line-height: 100%;
+    transition: 0.4s ease;
+    transition-property: opacity, transform;
+  }
+}
+
+.header_button_launch {
+  position: relative;
+  overflow: hidden;
+  margin-left: get-d(20px);
+
+  color: #fff;
+  text-transform: capitalize;
+
+  &::after {
+    opacity: 0 !important;
+  }
+
+  &:hover {
+    color: #fff;
+
+    .header_button_launch_FlyingParticles {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0.5 !important;
+    }
+  }
+}
+
+.header_button_launch_FlyingParticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  transition: 1s ease-in-out;
+  transition-property: opacity;
+}

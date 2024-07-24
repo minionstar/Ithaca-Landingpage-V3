@@ -1,0 +1,84 @@
+.Preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+
+  z-index: 1000;
+
+  background-color: #060913;
+
+  transition: 2s ease-in-out;
+  transition-property: transform, opacity;
+
+  pointer-events: none;
+
+  &.hidden {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.Preloader_logo {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 0;
+}
+
+.Preloader_planet {
+  position: absolute;
+  bottom: 0;
+  width: 20%;
+
+  @media screen and (max-width: $tablet_big) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+  }
+}
+
+.Preloader_player {
+  &.logo {
+    display: flex;
+    flex: 1 0 0;
+  }
+}
+
+.Preloader_progress {
+  position: absolute;
+  left: get-d(95px);
+  bottom: get-d(15px);
+
+  color: #fff;
+  font-size: get-d(50px);
+  line-height: 100%; /* 58px */
+  letter-spacing: get-d(-1.16px);
+  text-transform: uppercase;
+
+  & span {
+    color: #9d9daa;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    left: get-tl(150px);
+
+    font-size: get-tl(100px);
+    letter-spacing: get-tl(-1.16px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    left: unset;
+    right: get-t(30px);
+    bottom: get-t(35px);
+
+    font-size: get-t(100px);
+    letter-spacing: get-t(-1.16px);
+  }
+}

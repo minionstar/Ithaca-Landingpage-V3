@@ -1,0 +1,20 @@
+.Policy {
+  display: flex;
+  gap: get-d(24px);
+  margin-top: get-d(5px);
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(24px);
+    margin-top: get-tl(5px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(24px);
+    margin-top: get-t(5px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(24px);
+    margin-top: get-m(5px);
+  }
+}

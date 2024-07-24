@@ -1,0 +1,128 @@
+.ArchitectureIthacaModal {
+  width: 70%;
+  height: 70%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  z-index: 20;
+
+  border-radius: get-d(20px);
+  border: get-d(1px) solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.01); //orangered = rgb(255,69,0)
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); //mobile-friendly
+
+  @media screen and (max-width: $tablet) {
+    top: get-t(140px);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    height: auto;
+    border-radius: get-t(20px);
+    border: get-t(1px) solid rgba(255, 255, 255, 0.2);
+  }
+
+  @media screen and (max-width: $mobile) {
+    top: get-m(120px);
+    border-radius: get-m(20px);
+    border: get-m(1px) solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+.ArchitectureIthacaModal_close {
+  position: absolute;
+  top: get-d(32px);
+  right: get-d(32px);
+  display: flex;
+  align-items: center;
+  gap: get-d(6px);
+  padding: get-d(14px) get-d(16px);
+
+  border-radius: get-d(20px);
+  background-color: rgba(255, 255, 255, 0.05);
+
+  z-index: 10;
+
+  cursor: pointer;
+  pointer-events: all;
+
+  transition: 0.2s ease-in-out;
+  transition-property: background-color;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media screen and (max-width: $tablet) {
+    top: get-t(32px);
+    right: get-t(32px);
+    gap: get-t(10px);
+    padding: get-t(20px);
+
+    border-radius: get-t(20px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    top: get-m(24px);
+    right: get-m(24px);
+  }
+}
+
+.ArchitectureIthacaModal_close_text {
+  color: #fff;
+  font-size: get-d(13px);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: get-d(-0.65px);
+  text-transform: uppercase;
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(15px);
+    letter-spacing: get-t(-0.65px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(10px);
+    letter-spacing: get-m(-0.2px);
+  }
+}
+
+.ArchitectureIthacaModal_close_icon {
+  height: get-d(20px);
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(25px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(16px);
+  }
+}
+
+.ArchitectureIthacaModal_lottie {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  & > div {
+    @media screen and (max-width: $tablet_big) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.ArchitectureIthacaModal_lottie_item {
+  @media screen and (max-width: $tablet_big) {
+    width: 100%;
+    height: 100%;
+  }
+}

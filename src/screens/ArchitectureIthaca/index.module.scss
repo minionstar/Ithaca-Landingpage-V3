@@ -1,0 +1,449 @@
+.ArchitectureIthaca {
+  display: flex;
+  max-height: 100vh;
+
+  position: relative;
+  z-index: 5;
+
+  background-color: #060913;
+
+  // mix-blend-mode: lighten;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(
+      0deg,
+      #060913 0%,
+      #00000000 20%,
+      #00000000 80%,
+      #060913 100%
+    );
+
+    pointer-events: none;
+
+    z-index: -1;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    max-height: fit-content;
+    background-color: unset;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      background-image: linear-gradient(
+        0deg,
+        #00000000 0%,
+        #00000000 80%,
+        #060913 100%
+      );
+
+      pointer-events: none;
+
+      z-index: -1;
+    }
+  }
+}
+
+.ArchitectureIthaca_inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1 0 0;
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column;
+  }
+}
+
+.ArchitectureIthaca_half {
+  display: flex;
+
+  &.content {
+    width: 40%;
+    flex-direction: column;
+    gap: get-d(43px);
+
+    padding: get-d(120px) get-d(42px) get-d(20px);
+
+    @media screen and (max-width: $tablet_big) {
+      width: 100%;
+      align-items: center;
+      padding: get-tl(120px) get-tl(30px) get-tl(20px);
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding: get-t(120px) get-t(30px) get-t(20px);
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: get-m(120px) get-m(20px) get-m(20px);
+    }
+  }
+}
+
+.ArchitectureIthaca_header {
+  @media screen and (max-width: $tablet_big) {
+    width: 100%;
+  }
+}
+
+.ArchitectureIthaca_logo {
+  height: get-d(50px);
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    height: get-tl(50px);
+    margin-top: get-tl(17px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(50px);
+    margin-top: get-t(17px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(50px);
+    margin-top: get-m(17px);
+  }
+}
+
+.ArchitectureIthaca_banner {
+  display: inline-flex;
+  align-items: center;
+  gap: get-d(4px);
+  margin-top: get-d(20px);
+  padding: get-d(4px) get-d(7px) get-d(4px) get-d(4px);
+
+  border-radius: get-d(3px);
+  background: #5ee192;
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(4px);
+    margin-top: get-tl(18px);
+    padding: get-tl(4px) get-tl(7px) get-tl(4px) get-tl(4px);
+
+    border-radius: get-tl(3px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(4px);
+    margin-top: get-t(18px);
+    padding: get-t(4px) get-t(7px) get-t(4px) get-t(4px);
+
+    border-radius: get-t(3px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(6px);
+    margin-top: get-m(14px);
+    padding: get-m(6px) get-m(9px) get-m(6px) get-m(6px);
+
+    border-radius: get-m(3px);
+  }
+}
+
+.ArchitectureIthaca_banner_icon {
+  height: get-d(16px);
+
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    height: get-tl(16px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: get-t(16px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: get-m(13px);
+  }
+}
+
+.ArchitectureIthaca_banner_text {
+  color: #0b0e15;
+  font-size: get-d(12px);
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: get-d(-0.26px);
+  text-transform: uppercase;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(12px);
+    letter-spacing: get-tl(-0.26px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(12px);
+    letter-spacing: get-t(-0.26px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(11px);
+    letter-spacing: get-m(-0.2px);
+  }
+}
+
+.ArchitectureIthaca_bottom {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(16px);
+
+  @media screen and (max-width: $tablet_big) {
+    width: 100%;
+    gap: get-tl(16px);
+    margin-top: get-tl(20px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(16px);
+    margin-top: get-t(42px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(18px);
+    margin-top: get-m(42px);
+  }
+}
+
+.ArchitectureIthaca_bottom_header {
+  color: #fff;
+  font-size: get-d(12px);
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: get-d(1.8px);
+  text-transform: uppercase;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(12px);
+    letter-spacing: get-tl(1.8px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(12px);
+    letter-spacing: get-t(1.8px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(10px);
+    letter-spacing: get-m(1.5px);
+  }
+}
+
+.ArchitectureIthaca_items {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(32px);
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(32px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(32px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(24px);
+  }
+}
+
+.ArchitectureIthaca_lottie {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  transform: translateX(get-d(-0px));
+
+  & > div {
+    position: relative;
+    height: 100%;
+    width: auto;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    position: relative;
+    width: 100%;
+    transform: none;
+    display: block;
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: get-t(50px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-top: get-m(50px);
+  }
+}
+
+.ArchitectureIthaca_lottie_item {
+  height: 100%;
+  width: 100%;
+
+  @media screen and (max-width: $tablet_big) {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    & video {
+      position: relative;
+      width: 100%;
+
+      z-index: -1;
+
+      opacity: 0.9;
+    }
+
+    & .ArchitectureIthaca_lottie_lights {
+      z-index: 2;
+    }
+  }
+}
+
+.ArchitectureIthaca_lottie_links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 5;
+}
+
+.ArchitectureIthaca_lottie_link {
+  position: absolute;
+
+  // background-color: #a6beca2a;
+
+  cursor: pointer;
+
+  & svg {
+    position: absolute;
+
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    transition-property: opacity;
+
+    pointer-events: none;
+  }
+
+  &:hover {
+    & svg {
+      opacity: 1;
+    }
+  }
+}
+
+.ArchitectureIthaca_lottie_links_1 {
+  top: 10%;
+  left: 0%;
+  width: 100%;
+  height: 27%;
+
+  @media screen and (max-width: $tablet) {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 49%;
+  }
+}
+
+.ArchitectureIthaca_lottie_links_2 {
+  top: 55.5%;
+  left: 16.2%;
+  width: 18.3%;
+  height: 12.6%;
+
+  // background-color: #5ee19263;
+
+  & svg {
+    top: 50%;
+    left: 50.1%;
+    transform: translate(-50%, -50%);
+    width: 129.2%;
+    height: 153%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    top: 59.5%;
+    left: 6.3%;
+    width: 34.4%;
+    height: 7.5%;
+  }
+}
+
+.ArchitectureIthaca_lottie_links_3 {
+  top: 50.1%;
+  left: 75%;
+  width: 18%;
+  height: 9.2%;
+
+  & svg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 129.2%;
+    height: 169%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    top: 63.8%;
+    left: 59%;
+    width: 34.5%;
+    height: 7.5%;
+  }
+}
+
+.ArchitectureIthaca_lottie_links_4 {
+  top: 65.7%;
+  left: 74.8%;
+  width: 18.3%;
+  height: 19%;
+
+  & svg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-49.5%, -50%);
+    width: 129%;
+    height: 135%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    top: 78.7%;
+    left: 59%;
+    width: 34.7%;
+    height: 11.7%;
+  }
+}
+
+.ArchitectureIthaca_lottie_lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}

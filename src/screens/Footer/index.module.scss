@@ -1,0 +1,455 @@
+.Footer {
+  display: flex;
+
+  position: relative;
+  z-index: 4;
+
+  background-color: #060913;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(0deg, #00000000 80%, #060913 100%);
+
+    pointer-events: none;
+
+    z-index: -1;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    min-height: 100dvh;
+
+    background-color: unset;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.Footer_container {
+  display: flex; 
+  flex-direction: column;
+  flex: 1;
+}
+
+.Footer_logo_container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.Footer_sponsors_container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.Footer_audit_small_container {
+  display: none;
+  @media screen and (max-width: $tablet_big) {
+    display: block;
+  }
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+
+  @media screen and (max-width: $mobile) {
+    display: block; 
+  }
+}
+
+.Footer_audit_big_container {
+  display: block;
+  @media screen and (max-width: $tablet_big) {
+    display: none;
+  }
+
+  @media screen and (max-width: $tablet) {
+    display: block;
+  }
+
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.Footer_audit {
+  // padding: get-d(300px) get-d(80px) get-d(0px) get-d(0px);
+
+  @media screen and (max-width: $tablet_big) {
+    padding: get-tl(150px) get-tl(40px) get-tl(20px) get-tl(40px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 0px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 0px;
+  }
+}
+
+.Footer_report {
+  color: $accent;
+  text-wrap: nowrap;
+  font-size: get-d(14px);
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(20px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(20px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(14px);
+  }
+}
+
+.Footer_audit_logo {
+  width: get-d(200px);
+  height: get-d(61px);
+
+  @media screen and (max-width: $tablet_big) {
+    width: get-tl(300px);
+    height: get-tl(90px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: get-t(200px);
+    height: get-t(61px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: get-m(150px);
+    height: get-m(46px);
+  }
+}
+
+.Footer_sponsor_logo {
+  width: get-d(140px);
+  height: get-d(80px);
+
+  @media screen and (max-width: $tablet_big) {
+    width: get-tl(300px);
+    height: get-tl(90px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: get-t(200px);
+    height: get-t(61px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: get-m(150px);
+    height: get-m(46px);
+  }
+}
+
+.Footer_inner {
+  display: flex;
+  flex: 1 0 0;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0px get-d(80px) get-d(80px) get-d(80px);
+  width: 100%;
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: row;
+    padding: 0px get-tl(40px) get-tl(20px) get-tl(40px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 0px get-t(40px) get-t(20px) get-t(40px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 0px get-m(20px) get-m(40px) get-m(20px);
+  }
+}
+
+.Footer_half {
+  display: flex;
+  flex: 1 0 0;
+  width: 100%;
+
+  &.header {
+    flex-direction: column;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+
+    @media screen and (max-width: $tablet_big) {
+      justify-content: space-between;
+    }
+  }
+}
+
+.Footer_title {
+  color: #fff;
+  font-size: get-d(24px);
+  font-weight: 700;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(42px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(18px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(18px);
+  }
+}
+
+.Footer_title_gap {
+  margin-top: get-d(40px);
+
+  @media screen and (max-width: $tablet_big) {
+    margin-top: get-tl(40px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: get-t(40px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-top: get-m(40px);
+  }
+
+}
+
+.Footer_nav {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(24px);
+  margin-top: get-d(24px);
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(5px);
+    margin-top: get-tl(16px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(16px);
+    margin-top: get-t(16px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(16px);
+    margin-top: get-m(16px);
+  }
+}
+
+.Footer_socials {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(24px);
+  margin-top: get-d(24px);
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column;
+    width: 100%;
+    gap: get-tl(14px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(16px);
+    margin-top: get-t(16px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(16px);
+    margin-top: get-m(16px);
+  }
+}
+
+.Footer_lottie {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1 0 0;
+  margin-top: 0;
+
+  & > svg {
+    position: relative;
+    justify-content: center;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: get-d(60px);
+    margin-bottom: get-d(-48px);
+
+    z-index: 3;
+  }
+
+  @media screen and (max-width: $tablet_big) {
+    justify-content: flex-end;
+    align-items: center;
+    width: fit-content;
+    height: get-tl(200px);
+
+    & > svg {
+      margin-left: auto;
+      margin-right: auto;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      justify-content: center;
+      height: get-tl(33px);
+      margin-bottom: get-tl(-32px);
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-bottom: get-t(120px);
+
+    & > svg {
+      height: get-t(33px);
+      margin-bottom: get-t(-32px);
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    justify-content: flex-end;
+
+    & > svg {
+      height: get-m(20px);
+    }
+  }
+}
+
+.Footer_lottie_player {
+  position: relative;
+  width: get-d(498px);
+  height: get-d(514px);
+  z-index: 2;
+
+  @media screen and (max-width: $mobile) {
+    width: get-m(150px);
+    height: get-m(158px);
+  }
+}
+
+@keyframes fade {
+  0%,
+  9% {
+    opacity: 0;
+  }
+  10%,
+  75% {
+    opacity: 1;
+  }
+  88%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.Icon_logo {
+  animation: fade 14s infinite;
+}
+
+.Footer_menu_wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column;
+    gap: get-tl(32px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(32px);
+  }
+  @media screen and (max-width: $tablet) {
+    gap: get-m(10px);
+  }
+}
+
+.Footer_left {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(56px);
+  width: 100%;
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(42px);
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(42px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(42px);
+    max-width: 50%;
+  }
+}
+
+.Copyright_text {
+  font-size: get-d(14px);
+  color: #c5c5d9;
+
+  @media screen and (max-width: $tablet_big) {
+    font-size: get-tl(18px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    font-size: get-t(12px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: get-m(12px);
+  }
+}
+
+.Footer_copyright {
+  color: #c5c5d9;
+  display: flex;
+  flex-direction: row;
+  gap: get-d(32px);
+
+  @media screen and (max-width: $tablet_big) {
+    flex-direction: column-reverse;
+    gap: get-tl(12px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(12px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(12px);
+    width: get-m(320px);
+  }
+}

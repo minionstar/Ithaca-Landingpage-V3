@@ -1,0 +1,116 @@
+.PortfolioDominance {
+  display: flex;
+
+  position: relative;
+  z-index: 9;
+
+  background-color: #060913;
+
+  @media screen and (max-width: $tablet_big) {
+    height: 100dvh;
+
+    background-color: unset;
+  }
+
+  @media screen and (max-width: $tablet) {
+    height: auto;
+  }
+}
+
+.PortfolioDominance_inner {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  position: relative;
+  padding: get-d(200px) get-d(296.1px) get-d(30px);
+
+  @media screen and (max-width: $tablet_big) {
+    padding: get-tl(100px) get-tl(20px) get-tl(30px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: get-m(100px) get-m(20px) get-m(30px);
+  }
+}
+
+.PortfolioDominance_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0;
+}
+
+.PortfolioDominance_title {
+  text-align: center;
+}
+
+.PortfolioDominance_description {
+  display: flex;
+  flex-direction: column;
+  gap: get-d(40px);
+  margin-top: get-d(90px);
+
+  @media screen and (max-width: $tablet_big) {
+    gap: get-tl(40px);
+    margin-top: get-tl(90px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    gap: get-t(40px);
+    margin-top: get-t(90px);
+  }
+
+  @media screen and (max-width: $mobile) {
+    gap: get-m(60px);
+    margin-top: get-m(70px);
+  }
+}
+
+.PortfolioDominance_brackets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  // @media screen and (max-width: $tablet) {
+  //   transform: translateY(-100%);
+  // }
+}
+
+.PortfolioDominance_brackets_item {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  & > svg {
+    height: 100%;
+    width: auto;
+
+    & > path {
+      fill: #5ee192;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: get-m(35px);
+
+    & > svg {
+      height: 100%;
+      width: 100%;
+
+      & > path {
+        fill: #5ee192;
+      }
+    }
+  }
+
+  &:last-child {
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+}

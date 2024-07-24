@@ -1,0 +1,13 @@
+.LineItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 3px;
+  background-image: linear-gradient(to right, transparent, #fff);
+  border-radius: 10px;
+
+  @media screen and (max-width: $mobile) {
+    background-image: linear-gradient(to right, transparent, #ca95ff);
+  }
+}
